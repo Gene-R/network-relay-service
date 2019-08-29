@@ -1,0 +1,30 @@
+
+<relaysvc>
+    <!-- Database connection to Oracle -->
+    <proxy>
+        <policy>ORA_TRANSFORM</policy>
+        <src>localhost:1521</src>
+        <dsts>
+            <dst>scc58:1521</dst>
+            <dst>file:///WP07/T2/user/scc/relay/oratransform1.cfg</dst>
+        </dsts>
+        <flags>
+            <!--
+              <flag>HEX_DUMP</flag>
+              <flag>TRACE</flag>
+             -->
+        </flags>
+    </proxy>
+
+    <!-- Apache Load Balancer -->
+    <proxy>
+        <policy>ROUND_ROBIN</policy>
+        <src>*:7700</src>
+        <dsts>
+            <dst>localhost:17700</dst>
+        </dsts>
+        <flags>
+        </flags>
+    </proxy>
+
+</relaysvc> 

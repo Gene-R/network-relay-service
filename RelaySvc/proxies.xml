@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An exmple of RelaySvc XML specific proxy configuration file -->
+
+<relaysvc>
+    <proxy> 
+        <type>TCP</type>
+        <policy>ACTIVATE_IF_STOPPED</policy>
+        <src>comp3:17001</src>
+        <dsts>
+            <dst>soft-update:7701</dst>
+	    <dst>file:///home/gene/Projects/DummyTcpListener/dummy-Activeable-1.cfg</dst>
+        </dsts>
+        <flags>
+            <flag>HEX_DUMP</flag>
+        </flags>        
+    </proxy> 
+
+    <proxy> 
+        <type>TCP</type>
+        <policy>ROUND_ROBIN</policy>
+
+        <src>comp3:17002</src>
+        <dsts>
+            <dst>comp3:7801</dst>
+            <dst>comp3:7802</dst>
+        </dsts>
+        <flags>
+            <flag>HEX_DUMP</flag>
+            <flag>TRACE</flag>
+        </flags>        
+    </proxy>
+
+    <proxy> 
+        <type>UDP</type>
+        <policy>NONE</policy>        
+        <src>*:14555</src>
+        <dsts>
+            <dst>comp3:14000</dst>
+        </dsts>
+        <flags>
+            <flag>HEX_DUMP</flag>
+        </flags>        
+    </proxy>
+
+</relaysvc> 
+

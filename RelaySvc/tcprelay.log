@@ -1,0 +1,4 @@
+2017/05/09 11:35:34.243 ERROR ProxyXml.load(): cvc-complex-type.2.4.a: Invalid content was found starting with element 'policy'. One of '{type}' is expected.
+2017/05/09 11:35:34.301 INFO RelaySvc has started
+2017/05/09 11:37:18.193 INFO RelaySvc has started
+2017/05/09 11:38:50.389 INFO RelaySvc has started

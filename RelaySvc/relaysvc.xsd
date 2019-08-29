@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+    <!-- XML schema for RelaySvc proxy config file -->
+
+    <xs:element name="type" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="TCP|UDP|ORA"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="policy" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="ACTIVATE_IF_STOPPED|ROUND_ROBIN|FIRST_ON_SUCCESS|ORA_TRANSFORM|NONE"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="flag" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="HEX_DUMP|TRACE"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="relaysvc">
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="proxy" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="type"/>
+                            <xs:element ref="policy" />
+                            <xs:element name="src" type="xs:string"/>
+
+                            <xs:element name="dsts" >
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="dst" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element> 
+                                                       
+                            <xs:element name="flags" >
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element ref="flag" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>
