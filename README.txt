@@ -1,0 +1,2 @@
+This is a network service that works as a network TCP/UDP relay.
+It can act as a loadbalancer (round robin, first on success), activation service (first incoming request starts the process) and traffic monitor and logging.

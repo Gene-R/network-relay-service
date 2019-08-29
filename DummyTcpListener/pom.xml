@@ -6,7 +6,8 @@
 
     <groupId>dummytcplistener</groupId>
     <artifactId>DummyTcpListener</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>DummyTcpListener</name>
 
@@ -42,7 +43,6 @@
                         </manifest>
                         <manifestEntries>
                             <Build-Version>${project.version}</Build-Version>
-                            <SVN>999</SVN>
                             <Title>${name}</Title>
                         </manifestEntries>
                     </archive>
@@ -58,7 +58,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>

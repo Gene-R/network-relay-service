@@ -10,31 +10,6 @@
         <dependencySet>
             <unpack>true</unpack>
             <scope>runtime</scope>
-            <excludes>
-                <exclude>com.scc.softupdate:sysprops</exclude>
-                <exclude>com.scc.softupdate:SUplus-ejb</exclude>
-            </excludes>
-            <!-- <useTransitiveFiltering>true</useTransitiveFiltering> -->
-        </dependencySet>
-        <dependencySet>
-            <unpack>true</unpack>
-            <scope>runtime</scope>
-            <includes>
-                <include>com.scc.softupdate:SUplus-ejb</include>
-            </includes>
-            <unpackOptions>
-                <excludes>
-                    <exclude>**/log4j.properties</exclude>
-                </excludes>
-            </unpackOptions>
         </dependencySet>
     </dependencySets>
-    <fileSets>
-        <fileSet>
-            <includes>
-                <include>com.scc.softupdate:sulibs</include>
-            </includes>
-            <directory>${project.build.outputDirectory}</directory>
-        </fileSet>
-    </fileSets>
 </assembly>
